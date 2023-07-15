@@ -2,7 +2,10 @@
     "name": "joaom/site-mvc",
     "autoload": {
         "psr-4": {
-            "Core\\": "core/"
+            "Core\\": "core/",
+            "App\\": "app/",
+            "Sts\\": "app/sts"
+        
         }
     },
     "authors": [

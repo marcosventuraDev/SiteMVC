@@ -15,7 +15,7 @@ class ConfigController
        echo "Carregar a pagina<br>";
         if(!empty(filter_input(INPUT_GET, 'url', FILTER_DEFAULT))){
             $this->url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
-            var_dump($this->url);
+           
 
             $this->clearUrl();
 
@@ -24,17 +24,17 @@ class ConfigController
        
 
             if(isset($this->urlArray[0])){
-                var_dump($this->urlArray[0]);
+            
                 $this->urlController = $this->slugController($this->urlArray[0]);
             }else{
-                $this->urlController = "Home";
-                var_dump($this->urlController);
+                $this->urlController = $this->slugController("Home");
+             
             }
         }else{
             echo "Acessar a página inicial <br>";
-            $this->urlController = "Home";
+            $this->urlController =$this->slugController("Home") ;
         }
-        echo "Controller: {$this->urlController}";
+        echo "Controller: {$this->urlController} <br>";
 
     }
 
@@ -73,5 +73,15 @@ class ConfigController
         $this->urlSlugController = str_replace(' ', '', $this->urlSlugController);
 
         return $this->urlSlugController;
+    }
+
+
+    //
+    public function loadPage()
+    {
+        $classLoad = "\\Sts\\Controllers\\". $this->urlController;
+
+        $classPage = new $classLoad();
+        $classPage->index();
     }
 }

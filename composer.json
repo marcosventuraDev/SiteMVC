@@ -1,0 +1,15 @@
+{
+    "name": "joaom/site-mvc",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "marcos ventura",
+            "email": "marcosventura.dev@gmail.com"
+        }
+    ],
+    "require": {}
+}

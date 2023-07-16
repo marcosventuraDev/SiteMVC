@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class ConfigController
+class ConfigController extends Config
 {
     private string $url;
     private array $urlArray;
@@ -12,7 +12,9 @@ class ConfigController
     private array $format;
     public function __construct()
     {
-       echo "Carregar a pagina<br>";
+        //instanciando o metodo config
+        $this->Config();
+   
         if(!empty(filter_input(INPUT_GET, 'url', FILTER_DEFAULT))){
             $this->url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
            
@@ -27,12 +29,12 @@ class ConfigController
             
                 $this->urlController = $this->slugController($this->urlArray[0]);
             }else{
-                $this->urlController = $this->slugController("Home");
+                $this->urlController = $this->slugController(CONTROLLERERRO);
              
             }
         }else{
             echo "Acessar a página inicial <br>";
-            $this->urlController =$this->slugController("Home") ;
+            $this->urlController =$this->slugController(CONTROLLER) ;
         }
         echo "Controller: {$this->urlController} <br>";
 

@@ -9,7 +9,17 @@ if(!defined("M4RC05V3")){
 
 class StsHome
 {
+    /** @var array $data Recebe os registro do banco de dados*/
     private array $data;
+
+   
+/** @var object Recebe a conexão com o banco de dados */
+   private object $connection;
+
+    /**
+     * Criar o array com dados da página home
+     *  @return array  Retorna informações para página Home
+     */
     public function index():array
     {
         $this->data = [
@@ -17,7 +27,15 @@ class StsHome
             "description" => "Descrição do serviço"
         ];
       
+       $connection =  new \Sts\Models\helper\StsConn();
+       $this->connection = $connection->connectDb();
+       echo"<pre>";
+       var_dump($connection);
+       echo"</pre>";
+
         return $this->data;
+
+        
             
     }
 

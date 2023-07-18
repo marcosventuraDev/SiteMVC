@@ -7,6 +7,3 @@ if(!defined("M4RC05V3")){
  
 
 echo "View da página Home Do site<br>";
-echo"<pre>";
-var_dump($this->data);
-echo"</pre>";

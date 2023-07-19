@@ -6,4 +6,12 @@ if(!defined("M4RC05V3")){
  }
  
 
-echo "View da página Home Do site<br>";
+echo "<h1> Página Inicial </h1>";
+
+extract($this->data);
+echo "ID: $id <br>";
+echo "<b>Título:</b> $title_top <br>";
+echo "<b> Descrição:</b> $description_top <br>";
+echo "<b> Link do Botão:</b> $link_btn_top<br>";
+echo "<b> Contato:</b> $txt_btn_top <br>";
+echo "<b> Image:</b> $image<br>";

@@ -25,13 +25,13 @@ class StsConn
     private object $connect;
 
 
-    public function connectDb():object
+    public function connectDb(): object
     {
         try {
             //conexao com a porta
           $this->connect =  new PDO(
-                "mysql:host{$this->host};dbname={$this->dbname}"
-                .$this->dbname,$this->user,$this->pass);
+                "mysql:host={$this->host};dbname=".$this->dbname,
+                $this->user,$this->pass);
             return $this->connect;
 
         } catch (PDOException $err) {

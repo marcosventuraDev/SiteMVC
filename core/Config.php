@@ -25,7 +25,7 @@ abstract class Config
         define('USER', 'root');
         define('PASS', '');
         define('DBNAME', 'sitemvc');
-        define('PORT', '127.0.0.1');
+        /* define('PORT', '127.0.0.1'); */
        
 
         define('EMAILADM', 'marcosventura.dev@gmail.com');

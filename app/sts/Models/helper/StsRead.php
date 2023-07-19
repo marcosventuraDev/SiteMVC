@@ -30,16 +30,10 @@ if(!defined("M4RC05V3")){
 
     public function exeRead(string $table, string|null $terms = null, string|null $parseString = null)
     {
-        echo"<pre>";
-        var_dump($parseString);
-        var_dump($table);
-        echo"</pre>";
-
+      
         if(!empty($parseString)){
             parse_str($parseString, $this->values);
-                echo"<pre>";
-                var_dump($this->values);
-                echo"</pre>";
+             
         }
         $this->select = "SELECT * FROM {$table} {$terms}";
         var_dump($this->select);
@@ -47,6 +41,16 @@ if(!defined("M4RC05V3")){
         $this->exeInstruction();
     }
 
+    public function fullRead( string $query, string | null $parseString = null)
+    {
+        $this->select = $query;
+              
+        if(!empty($parseString)){
+            parse_str($parseString, $this->values);
+              
+        }
+        $this->exeInstruction();
+    }
     private function exeInstruction()
     {
         $this->connection();
@@ -69,14 +73,9 @@ if(!defined("M4RC05V3")){
     private function exeParameter()
     {
         if ($this->values){
-            echo"<pre>";
-            var_dump($this->values);
-            echo"</pre>";
+           
             foreach($this->values as $link => $value){
-                echo"<pre>";
-                var_dump($link);
-                var_dump($value);
-                echo"</pre>";
+              
                 if($link == 'limit' || $link == 'offset'){
                     $value = (int) $value;
                 }

@@ -22,14 +22,28 @@ class StsHome
      */
     public function index():array
     {
+     /*  
+       $connection =  new \Sts\Models\helper\StsConn();
+       $this->connection = $connection->connectDb();
+
+       $query_home_top = "SELECT id, title_top, description_top, link_btn_top, txt_btn_top, image 
+                        FROM sts_homes_tops 
+                        WHERE id = :id
+                        LIMIT :limit";
+        $result_home_top = $this->connection->prepare($query_home_top);
+        $result_home_top->bindvalue(':limit', 1, \PDO::PARAM_INT);
+        $result_home_top->bindvalue(':id', 1, \PDO::PARAM_INT);
+        $result_home_top->execute();
+        $this->data = $result_home_top->fetch(\PDO::FETCH_ASSOC); */
         
         $viewHome = new \Sts\Models\helper\StsRead();
-        $viewHome->exeRead("sts_homes_tops");
+        $viewHome->exeRead("sts_homes_tops","WHERE id=:id LIMIT :limit", "id=1&limit=1" );
         $this->data = $viewHome->getResult();
 
-            echo"<pre>";
+            echo"<pre> <span>aqui</span>";
        var_dump($this->data);
            echo"</pre>";
+          /*  $this->data = []; */
         return $this->data;
 
         

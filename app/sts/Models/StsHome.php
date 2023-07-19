@@ -29,7 +29,7 @@ class StsHome
         $viewHome->fullRead("SELECT id, title_top, description_top, link_btn_top, image
          from sts_homes_tops
          WHERE id=:id 
-         LIMIT :limit", "id=2&limit=1" );
+         LIMIT :limit", "id=1&limit=1" );
         $this->data = $viewHome->getResult();
 
        

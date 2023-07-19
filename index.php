@@ -1,5 +1,9 @@
 <?php
 
+session_start(); //iniciar a sessão
+ob_start();//Elimina os dados do Bufer de saída
+
+
 //Constante que define que o usuário está acessando páginas internas através da página "index.php".
 
 define('M4RC05V3', true);

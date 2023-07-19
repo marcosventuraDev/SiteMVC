@@ -15,7 +15,7 @@ if(!defined("M4RC05V3")){
 
 
 /** */
-class StsConn
+abstract class StsConn
 {
     private string $host = HOST;
     private string $user =  USER;

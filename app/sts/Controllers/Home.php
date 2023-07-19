@@ -19,6 +19,6 @@ class Home
       
      
       $loadView = new \Core\ConfigView("sts/Views/home/home.php", $this->data);
-      $loadView->loadView();
+      $loadView->loadView(); 
     }
 }

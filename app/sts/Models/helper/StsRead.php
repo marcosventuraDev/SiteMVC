@@ -36,7 +36,6 @@ if(!defined("M4RC05V3")){
              
         }
         $this->select = "SELECT * FROM {$table} {$terms}";
-        var_dump($this->select);
 
         $this->exeInstruction();
     }

@@ -14,9 +14,9 @@ class StsContato
    {
     $this->data = $data;
 
-    var_dump($this->data);
+  
     $_SESSION['msg'] = "<p style='color:green'>Salvar mensagem</p>";
-    return true;
+    return false;
 
    }
 
